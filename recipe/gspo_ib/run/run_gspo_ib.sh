@@ -2,19 +2,18 @@
 
 
 export RAY_ADDRESS="http://10.42.150.208:8265"
-WORKING_DIR=/nfs-152/disk5/jiaoxuewei/workspace/env/verl-20250829.exp/
+WORKING_DIR=/path/to/verl/
 RUNTIME_ENV=runtime_env.yaml
 
 MODEL_PATH=/itdd-pfs/LLM/public-models/Qwen2.5-3B-Base
-#MODEL_PATH=/itdd-pfs/jiaoxuewei/model/Qwen2.5-Math-7B-Instruct
 
-TRAIN_FILE1=/nfs-152/disk5/jiaoxuewei/workspace/rl/icl.exp/data/_dapo.parquet
-TRAIN_FILE2=/nfs-152/disk5/jiaoxuewei/workspace/rl/icl.exp/data/_MATH.parquet
+TRAIN_FILE1=/path/to/data/_dapo.parquet
+TRAIN_FILE2=/path/to/data/_MATH.parquet
 
-TEST_FILE1=/nfs-152/disk5/jiaoxuewei/workspace/rl/icl.exp/data/_aime_2024.parquet
-TEST_FILE2=/nfs-152/disk5/jiaoxuewei/workspace/rl/icl.exp/data/_aime_2025.parquet
-TEST_FILE3=/nfs-152/disk5/jiaoxuewei/workspace/rl/icl.exp/data/_amc2023.parquet
-TEST_FILE3=/nfs-152/disk5/jiaoxuewei/workspace/rl/icl.exp/data/_math500.parquet
+TEST_FILE1=/path/to/data/_aime_2024.parquet
+TEST_FILE2=/path/to/data/_aime_2025.parquet
+TEST_FILE3=/path/to/data/_amc2023.parquet
+TEST_FILE3=/path/to/data/_math500.parquet
 
 
 
@@ -93,5 +92,5 @@ ray job submit --no-wait --runtime-env="${RUNTIME_ENV}" \
     trainer.save_freq=10000 \
     trainer.total_epochs=10 \
     reward_model.reward_manager=gspoib \
-    custom_reward_function.path=/nfs-152/disk5/jiaoxuewei/workspace/rl/ib/reward_function.py \
+    custom_reward_function.path=/path/to/reward_function.py \
     custom_reward_function.name=compute_score \
