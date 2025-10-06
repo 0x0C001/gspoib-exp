@@ -16,6 +16,7 @@ from .registry import get_reward_manager_cls, register  # noqa: I001
 from .batch import BatchRewardManager
 from .dapo import DAPORewardManager
 from .naive import NaiveRewardManager
+from .gspoib import GspoibRewardManager
 from .prime import PrimeRewardManager
 
 # Note(haibin.lin): no need to include all reward managers here in case of complicated dependencies
@@ -24,6 +25,7 @@ __all__ = [
     "DAPORewardManager",
     "NaiveRewardManager",
     "PrimeRewardManager",
+    "GspoibRewardManager",
     "register",
     "get_reward_manager_cls",
 ]
